@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.tgf21.com">
   <title>Linux Iptables 防火墙 | 小光头禅院</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~ Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。">
+  <meta name="description" content="最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~ Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。 禁用原有的firewall服务先查看firewall的状态  systemctl status firewalld">
 <meta name="keywords" content="Linux,iptables,防火墙">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Iptables 防火墙">
 <meta property="og:url" content="http://www.tgf21.com/2018/11/24/Linux防火墙小计/index.html">
 <meta property="og:site_name" content="小光头禅院">
-<meta property="og:description" content="最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~ Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。">
+<meta property="og:description" content="最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~ Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。 禁用原有的firewall服务先查看firewall的状态  systemctl status firewalld">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-01T09:14:48.709Z">
+<meta property="og:updated_time" content="2018-12-01T09:20:13.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Iptables 防火墙">
-<meta name="twitter:description" content="最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~ Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。">
+<meta name="twitter:description" content="最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~ Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。 禁用原有的firewall服务先查看firewall的状态  systemctl status firewalld">
   
     <link rel="alternative" href="/atom.xml" title="小光头禅院" type="application/atom+xml">
   
@@ -192,11 +192,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~</p>
-<p>Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。<br><a id="more"></a></p>
+<p>Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。</p>
 <h3 id="禁用原有的firewall服务"><a href="#禁用原有的firewall服务" class="headerlink" title="禁用原有的firewall服务"></a>禁用原有的<code>firewall</code>服务</h3><p>先查看<code>firewall</code>的状态</p>
 <blockquote>
 <p>systemctl status firewalld</p>
 </blockquote>
+<a id="more"></a>
 <p>如果是active的话，关闭再禁用服务</p>
 <blockquote>
 <p>systemctl stop firewalld<br>systemctl disable firewalld </p>
@@ -543,19 +544,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">software</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Unit Test</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Ember</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">software</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,6 +612,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Sublime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">柯里化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vim</a>
               </li>
              
@@ -620,14 +629,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Syntastic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">柯里化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sublime</a>
               </li>
              
               <li class="article-tag-list-item">

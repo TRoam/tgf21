@@ -171,35 +171,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Linux-FTP-Config" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Linux防火墙小计" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/01/Linux-FTP-Config/">Linux(centos) FTP 服务配置</a>
+      <a class="article-title" href="/post/37a12b05.html">Linux Iptables 防火墙</a>
     </h1>
   
 
         
-        <a href="/2018/12/01/Linux-FTP-Config/" class="archive-article-date">
-  	<time datetime="2018-12-01T02:55:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
+        <a href="/post/37a12b05.html" class="archive-article-date">
+  	<time datetime="2018-11-24T02:54:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近需要把服务器从腾讯云，迁移到了阿里云（主要是阿里云11月的两折优惠啦），重新折腾了一下部署方式，启用服务器的FTP功能，做一个小记录。<br>Linux上最著名的FTP要数vsftpd了，小巧轻快，简单易用。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装vsftpd"><a href="#安装vsftpd" class="headerlink" title="安装vsftpd"></a>安装vsftpd</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">which vsftpd</span><br><span class="line"><span class="meta">#</span> /usr/bin/which: no vsftpd in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)</span><br></pre></td></tr></table></figure>
-<p>如上表示并没有找到任何vsftpd的，那么就运行一下命令安装~</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd</span><br></pre></td></tr></table></figure>
+        <p>最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~</p>
+<p>Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。<br>
         
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -212,7 +210,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">FTP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iptables</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">防火墙</a>
         		</li>
       		
 		</ul>
@@ -222,7 +224,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/01/Linux-FTP-Config/">展开全文 >></a>
+          <a class="article-more-a" href="/post/37a12b05.html">展开全文 >></a>
         </p>
       
 
@@ -252,32 +254,30 @@
 
 
   
-    <article id="post-Linux防火墙小计" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-Linux-FTP-Config" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/24/Linux防火墙小计/">Linux Iptables 防火墙</a>
+      <a class="article-title" href="/post/661c9634.html">Linux(centos) FTP 服务配置</a>
     </h1>
   
 
         
-        <a href="/2018/11/24/Linux防火墙小计/" class="archive-article-date">
-  	<time datetime="2018-11-24T02:54:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-24</time>
+        <a href="/post/661c9634.html" class="archive-article-date">
+  	<time datetime="2018-11-17T02:55:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近把服务器更新成了阿里云的Centos， 于是倒腾了系列防火墙的东东 ~~</p>
-<p>Centos中默认的防火墙并不是iptables， 而是firewall，因此需要自己安装iptables服务。</p>
-<h3 id="禁用原有的firewall服务"><a href="#禁用原有的firewall服务" class="headerlink" title="禁用原有的firewall服务"></a>禁用原有的<code>firewall</code>服务</h3><p>先查看<code>firewall</code>的状态</p>
-<blockquote>
-<p>systemctl status firewalld</p>
-</blockquote>
+        <p>最近需要把服务器从腾讯云，迁移到了阿里云（主要是阿里云11月的两折优惠啦），重新折腾了一下部署方式，启用服务器的FTP功能，做一个小记录。<br>Linux上最著名的FTP要数vsftpd了，小巧轻快，简单易用。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装vsftpd"><a href="#安装vsftpd" class="headerlink" title="安装vsftpd"></a>安装vsftpd</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">which vsftpd</span><br><span class="line"><span class="meta">#</span><span class="bash"> /usr/bin/<span class="built_in">which</span>: no vsftpd <span class="keyword">in</span> (/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/root/bin)</span></span><br></pre></td></tr></table></figure>
+<p>如上表示并没有找到任何vsftpd的，那么就运行一下命令安装~</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd</span><br></pre></td></tr></table></figure>
         
       
 
@@ -295,11 +295,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iptables</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">防火墙</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">FTP</a>
         		</li>
       		
 		</ul>
@@ -309,7 +305,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/24/Linux防火墙小计/">展开全文 >></a>
+          <a class="article-more-a" href="/post/661c9634.html">展开全文 >></a>
         </p>
       
 
@@ -346,13 +342,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/17/ShadowsocksR科学上网/">ShadowsocksR科学上网</a>
+      <a class="article-title" href="/post/ff56cfee.html">ShadowsocksR科学上网</a>
     </h1>
   
 
         
-        <a href="/2018/11/17/ShadowsocksR科学上网/" class="archive-article-date">
-  	<time datetime="2018-11-17T02:54:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-17</time>
+        <a href="/post/ff56cfee.html" class="archive-article-date">
+  	<time datetime="2018-11-15T02:54:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-15</time>
 </a>
         
       </header>
@@ -393,7 +389,97 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/17/ShadowsocksR科学上网/">展开全文 >></a>
+          <a class="article-more-a" href="/post/ff56cfee.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Webpack1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/3af31a87.html">Webpack优化系列 -- Js&amp;css模块分离</a>
+    </h1>
+  
+
+        
+        <a href="/post/3af31a87.html" class="archive-article-date">
+  	<time datetime="2018-10-27T02:53:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Webpack将所有的静态资源都视为模块，比如JavaScript，scss，图片等，从而引入对应的loader去<br>加载相应的资源，并且处理成相应的模块。和大多数包管理器不一样的是，Webpack的加载器之间可以进行串联，一个加载器的输出可以成为另一个加载器的输入。</p>
+<blockquote>
+<p>如下图，Less资源首先通过<code>less-loader</code>模块加载器加载为css资源，然后通过<code>css-loader</code>模块加载器转化为css模块，最后再更加<code>style-loader</code>编译转化为适合特定浏览器的最终可适用样式资源。</p>
+</blockquote>
+<img src="/post/3af31a87/css-loader.png">
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ExtractTextPlugin</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MiniCssExtractPlugin</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/3af31a87.html">展开全文 >></a>
         </p>
       
 
@@ -430,12 +516,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/21/React多页应用/">React多页应用</a>
+      <a class="article-title" href="/post/ef9db4a8.html">Webpack --- React多页应用</a>
     </h1>
   
 
         
-        <a href="/2018/10/21/React多页应用/" class="archive-article-date">
+        <a href="/post/ef9db4a8.html" class="archive-article-date">
   	<time datetime="2018-10-21T02:49:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-21</time>
 </a>
         
@@ -447,7 +533,7 @@
 <p>工作遇到这样的需求，相同的项目中，需要打包出多个单页应用，但是又希望能够在开发和维护中共享很多配置或者组件。<br>于是乎，使用 webpack 做了一些简单配置</p>
 </blockquote>
 <p>项目 tree 结构大致如下：</p>
-<img src="/2018/10/21/React多页应用/we.png">
+<img src="/post/ef9db4a8/we.png">
 <p>预期目标是， 在<code>routes</code>目录下，每有一个文件夹，就代表一个独立的单页应用，也就是一个出口文件。</p>
         
       
@@ -484,7 +570,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/21/React多页应用/">展开全文 >></a>
+          <a class="article-more-a" href="/post/ef9db4a8.html">展开全文 >></a>
         </p>
       
 
@@ -521,12 +607,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/08/博客评论实现原理探究/">博客评论工具Gitment实现原理探究</a>
+      <a class="article-title" href="/post/b6db774d.html">博客评论工具Gitment实现原理探究</a>
     </h1>
   
 
         
-        <a href="/2018/02/08/博客评论实现原理探究/" class="archive-article-date">
+        <a href="/post/b6db774d.html" class="archive-article-date">
   	<time datetime="2018-02-08T07:46:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
 </a>
         
@@ -579,7 +665,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/08/博客评论实现原理探究/">展开全文 >></a>
+          <a class="article-more-a" href="/post/b6db774d.html">展开全文 >></a>
         </p>
       
 
@@ -616,12 +702,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/03/2018年初雪的碎碎念/">2018年初雪的碎碎念</a>
+      <a class="article-title" href="/post/a5ae4cf8.html">2018年初雪的碎碎念</a>
     </h1>
   
 
         
-        <a href="/2018/02/03/2018年初雪的碎碎念/" class="archive-article-date">
+        <a href="/post/a5ae4cf8.html" class="archive-article-date">
   	<time datetime="2018-02-03T03:06:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-03</time>
 </a>
         
@@ -662,103 +748,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/03/2018年初雪的碎碎念/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-前端面试知识梳理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/21/前端面试知识梳理/">前端面试知识梳理(ES6, 2018向)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/21/前端面试知识梳理/" class="archive-article-date">
-  	<time datetime="2018-01-21T01:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近思考了很多，关于生活，关于工作，做出了一些可能影响深远的计划和行动。<br>这段时间也梳理了一下一些知识点，前端部分，主要是偏向于ES6 的一些可能面试点，罗列了下来。</p>
-<p>主要分为以下几个方面的问题：</p>
-<blockquote>
-<ul>
-<li>ES6/js 语言相关</li>
-<li>HTTP与网络请求</li>
-<li>HTML5知识</li>
-<li>CSS 知识</li>
-<li>前端安全与优化</li>
-</ul>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/21/前端面试知识梳理/">展开全文 >></a>
+          <a class="article-more-a" href="/post/a5ae4cf8.html">展开全文 >></a>
         </p>
       
 
@@ -890,6 +880,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
@@ -910,14 +908,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -934,14 +924,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -951,6 +933,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1115,6 +1105,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Font-Awesome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ExtractTextPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MiniCssExtractPlugin</a>
               </li>
             
             <div class="clearfix"></div>

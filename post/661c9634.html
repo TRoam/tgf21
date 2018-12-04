@@ -17,7 +17,7 @@
 <meta property="og:description" content="最近需要把服务器从腾讯云，迁移到了阿里云（主要是阿里云11月的两折优惠啦），重新折腾了一下部署方式，启用服务器的FTP功能，做一个小记录。Linux上最著名的FTP要数vsftpd了，小巧轻快，简单易用。 准备工作安装vsftpd12which vsftpd# /usr/bin/which: no vsftpd in (/usr/local/sbin:/usr/local/bin:/usr/sbi">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://www.tgf21.com/post/661c9634/ftp_log.png">
-<meta property="og:updated_time" content="2018-12-03T08:09:29.105Z">
+<meta property="og:updated_time" content="2018-12-04T09:32:19.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux(centos) FTP 服务配置">
 <meta name="twitter:description" content="最近需要把服务器从腾讯云，迁移到了阿里云（主要是阿里云11月的两折优惠啦），重新折腾了一下部署方式，启用服务器的FTP功能，做一个小记录。Linux上最著名的FTP要数vsftpd了，小巧轻快，简单易用。 准备工作安装vsftpd12which vsftpd# /usr/bin/which: no vsftpd in (/usr/local/sbin:/usr/local/bin:/usr/sbi">
@@ -233,7 +233,10 @@
 <p>解决方法： </p>
 <p>在配置文件中加入： </p>
 <p>allow_writeable_chroot=YES</p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">425 Failed to establish connection.</span><br></pre></td></tr></table></figure>
+<p>解决，检查配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">local_enable=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">xferlog_std_format=YES</span><br><span class="line">data_connection_timeout=120</span><br><span class="line">listen=NO</span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line">userlist_enable=YES</span><br><span class="line">tcp_wrappers=YES</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --destination-port 10000:10001 -j ACCEPT</span><br></pre></td></tr></table></figure>
       
 
       

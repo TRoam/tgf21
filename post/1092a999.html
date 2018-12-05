@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.tgf21.com">
-  <title>Webpack优化系列 --- 公共模块与业务模块隔离 | 小光头禅院</title>
+  <title>Webpack优化系列(三) --- 公共模块与业务模块隔离 | 小光头禅院</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在我们实际的项目中，模块大致可以分为业务相关的模块，以及公共基础模块，比如第三方的依赖模块（React， lodash， echart）等。并不会常常更新，而且相对来说体积都比较大。如果和业务代码一起打包，不容易利用缓存。每次更新都引起重新打包和下载。如果能够把公用模块和业务模块分开打包，那么对于性能来说，会有不小的提升。 webpack的CommonsChunkPlugin插件帮我们完美的解决了">
 <meta name="keywords" content="前端,webpack,优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack优化系列 --- 公共模块与业务模块隔离">
+<meta property="og:title" content="Webpack优化系列(三) --- 公共模块与业务模块隔离">
 <meta property="og:url" content="http://www.tgf21.com/post/1092a999.html">
 <meta property="og:site_name" content="小光头禅院">
 <meta property="og:description" content="在我们实际的项目中，模块大致可以分为业务相关的模块，以及公共基础模块，比如第三方的依赖模块（React， lodash， echart）等。并不会常常更新，而且相对来说体积都比较大。如果和业务代码一起打包，不容易利用缓存。每次更新都引起重新打包和下载。如果能够把公用模块和业务模块分开打包，那么对于性能来说，会有不小的提升。 webpack的CommonsChunkPlugin插件帮我们完美的解决了">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-05T12:18:50.321Z">
+<meta property="og:updated_time" content="2018-12-05T12:42:05.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack优化系列 --- 公共模块与业务模块隔离">
+<meta name="twitter:title" content="Webpack优化系列(三) --- 公共模块与业务模块隔离">
 <meta name="twitter:description" content="在我们实际的项目中，模块大致可以分为业务相关的模块，以及公共基础模块，比如第三方的依赖模块（React， lodash， echart）等。并不会常常更新，而且相对来说体积都比较大。如果和业务代码一起打包，不容易利用缓存。每次更新都引起重新打包和下载。如果能够把公用模块和业务模块分开打包，那么对于性能来说，会有不小的提升。 webpack的CommonsChunkPlugin插件帮我们完美的解决了">
   
     <link rel="alternative" href="/atom.xml" title="小光头禅院" type="application/atom+xml">
@@ -178,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Webpack优化系列 --- 公共模块与业务模块隔离
+      Webpack优化系列(三) --- 公共模块与业务模块隔离
     </h1>
   
 
@@ -293,7 +293,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Webpack优化系列 --- 减肥:压缩和混淆代码
+          Webpack优化系列(四) --- 减肥:压缩和混淆代码
         
       </div>
     </a>

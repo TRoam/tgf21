@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.tgf21.com">
-  <title>Webpack优化系列 --- 减肥:压缩和混淆代码 | 小光头禅院</title>
+  <title>Webpack优化系列(四) --- 减肥:压缩和混淆代码 | 小光头禅院</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前面通过使用CommonsChunkPlugin插件，将公共模块与业务模块分开处理，但是打包输入的文件任然体积比较大，。浏览器从服务器访问网页时，需要下载这些源文件，文件越大传输时间就越长。 为了提升网页加速速度和减少网络传输流量， 可以对这些资源进行压缩和混淆。  除了通过GZIP以外，还可以对文件本身进行优化，提升网络速度，并且由于压缩后的代码可读性非常差 就算别人下载到网页的代码，也大大增加">
 <meta name="keywords" content="前端,webpack,优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack优化系列 --- 减肥:压缩和混淆代码">
+<meta property="og:title" content="Webpack优化系列(四) --- 减肥:压缩和混淆代码">
 <meta property="og:url" content="http://www.tgf21.com/post/aa6507f5.html">
 <meta property="og:site_name" content="小光头禅院">
 <meta property="og:description" content="前面通过使用CommonsChunkPlugin插件，将公共模块与业务模块分开处理，但是打包输入的文件任然体积比较大，。浏览器从服务器访问网页时，需要下载这些源文件，文件越大传输时间就越长。 为了提升网页加速速度和减少网络传输流量， 可以对这些资源进行压缩和混淆。  除了通过GZIP以外，还可以对文件本身进行优化，提升网络速度，并且由于压缩后的代码可读性非常差 就算别人下载到网页的代码，也大大增加">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-05T12:38:45.065Z">
+<meta property="og:updated_time" content="2018-12-05T12:47:20.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack优化系列 --- 减肥:压缩和混淆代码">
+<meta name="twitter:title" content="Webpack优化系列(四) --- 减肥:压缩和混淆代码">
 <meta name="twitter:description" content="前面通过使用CommonsChunkPlugin插件，将公共模块与业务模块分开处理，但是打包输入的文件任然体积比较大，。浏览器从服务器访问网页时，需要下载这些源文件，文件越大传输时间就越长。 为了提升网页加速速度和减少网络传输流量， 可以对这些资源进行压缩和混淆。  除了通过GZIP以外，还可以对文件本身进行优化，提升网络速度，并且由于压缩后的代码可读性非常差 就算别人下载到网页的代码，也大大增加">
   
     <link rel="alternative" href="/atom.xml" title="小光头禅院" type="application/atom+xml">
@@ -178,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Webpack优化系列 --- 减肥:压缩和混淆代码
+      Webpack优化系列(四) --- 减肥:压缩和混淆代码
     </h1>
   
 
@@ -210,7 +210,7 @@
 </ul>
 <h3 id="cssnano压缩css"><a href="#cssnano压缩css" class="headerlink" title="cssnano压缩css"></a><code>cssnano</code>压缩css</h3><p>CSS同样可以进行瘦身和混淆，给予Postcss的css压缩工具<code>csssnano</code>能够理解css代码含义，去除不必要的规则等。<br>使用也是非常的简单，它已经在<code>css-loader</code>中内置了，只需要开启<code>minimize</code>选项，回顾前面对css优化的总结中，可以看到如下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css/</span>,<span class="comment">// 增加对 CSS 文件的支持</span></span><br><span class="line">        <span class="comment">// 提取出 Chunk 中的 CSS 代码到单独的文件中</span></span><br><span class="line">        use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">          <span class="comment">// 通过 minimize 选项压缩 CSS 代码</span></span><br><span class="line">          use: [<span class="string">'css-loader?minimize'</span>]</span><br><span class="line">        &#125;),</span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"> plugins: [</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">new</span> ExtractTextPlugin(&#123;</span><br><span class="line">      filename: <span class="string">`[name]_[contenthash:8].css`</span>,<span class="comment">// 给输出的 CSS 文件名称加上 Hash 值</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">/// ...</span></span><br><span class="line">  ],</span><br></pre></td></tr></table></figure>
-<p>至此，再看打包出来的文件，应该就达到预期了， 那么打包时间过长，每次开发都开始等的久了，应该怎么办呢？</p>
+<p>至此，再看打包出来的文件，应该就达到预期了， 那么打包时间过长，每次开发都开始等的久了，并且每次打包hash都跟着变化，应该怎么优化呢?</p>
 
       
 
@@ -302,9 +302,18 @@
   
 <nav id="article-nav">
   
+    <a href="/post/36cda913.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Webpack-Dll(五) --- DllPlugin处理外部依赖
+        
+      </div>
+    </a>
+  
   
     <a href="/post/1092a999.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Webpack优化系列 --- 公共模块与业务模块隔离</div>
+      <div class="article-nav-title">Webpack优化系列(三) --- 公共模块与业务模块隔离</div>
       <i class="icon-circle-right"></i>
     </a>
   

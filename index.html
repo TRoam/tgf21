@@ -171,6 +171,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack-dll" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/36cda913.html">Webpack-Dll(五) --- DllPlugin处理外部依赖</a>
+    </h1>
+  
+
+        
+        <a href="/post/36cda913.html" class="archive-article-date">
+  	<time datetime="2018-12-02T07:40:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们可能已经遇到了这个问题，webpack已经区别出业务模块和公共模块的代码，为了利用浏览器缓存<br>我们也添加了hash，然而又有了这些问题： </p>
+<blockquote>
+<ul>
+<li>每次打包，公共组件的hash都会变化，浏览器缓存形同虚设</li>
+<li>打包时间越来越长，特别是在多页面应用的项目中</li>
+</ul>
+</blockquote>
+<p>当然劳动人民的智慧是无限的，为了优化这些问题，可以从这些方面着手</p>
+<blockquote>
+<ul>
+<li>公共模块等提出来单独打包，每次只打包业务模块</li>
+<li>将打包出来的公共模块作为外部依赖重新引入</li>
+</ul>
+</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/36cda913.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-webpack-min" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,7 +273,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/aa6507f5.html">Webpack优化系列 --- 减肥:压缩和混淆代码</a>
+      <a class="article-title" href="/post/aa6507f5.html">Webpack优化系列(四) --- 减肥:压缩和混淆代码</a>
     </h1>
   
 
@@ -262,7 +357,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/1092a999.html">Webpack优化系列 --- 公共模块与业务模块隔离</a>
+      <a class="article-title" href="/post/1092a999.html">Webpack优化系列(三) --- 公共模块与业务模块隔离</a>
     </h1>
   
 
@@ -593,7 +688,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/3af31a87.html">Webpack优化系列 -- Js&amp;css模块分离</a>
+      <a class="article-title" href="/post/3af31a87.html">Webpack优化系列(二) -- Js&amp;css模块分离</a>
     </h1>
   
 
@@ -647,89 +742,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/post/3af31a87.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-webpack-analysis" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/c3fa870e.html">Webpack优化系列 -- 性能分析可视化</a>
-    </h1>
-  
-
-        
-        <a href="/post/c3fa870e.html" class="archive-article-date">
-  	<time datetime="2018-10-26T07:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/post/c3fa870e/ana.png">
-<p>最近觉得项目的打包速度异常的慢，于是利用webpack插件<code>webpack-bundle-analyzer</code>查看打包出来的各个模块的体积已经路径，寻找优化的方向，这里做简单的总结：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">webpack-bundle-analyzer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/c3fa870e.html">展开全文 >></a>
         </p>
       
 

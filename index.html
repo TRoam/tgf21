@@ -171,6 +171,173 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack-min" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/aa6507f5.html">Webpack优化系列 --- 减肥:压缩和混淆代码</a>
+    </h1>
+  
+
+        
+        <a href="/post/aa6507f5.html" class="archive-article-date">
+  	<time datetime="2018-12-01T11:14:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前面通过使用<code>CommonsChunkPlugin</code>插件，将公共模块与业务模块分开处理，但是打包输入的文件任然体积比较大，。<br>浏览器从服务器访问网页时，需要下载这些源文件，文件越大传输时间就越长。 为了提升网页加速速度和减少网络传输流量， 可以对这些资源进行压缩和混淆。 </p>
+<p>除了通过GZIP以外，还可以对文件本身进行优化，提升网络速度，并且由于压缩后的代码可读性非常差 就算别人下载到网页的代码，也大大增加了代码分析和改造的难度。</p>
+<p>Webpack中最常用的压缩和混淆的js插件就是<code>UglifyJsPlugin</code>，对css使用的比较多的工具则是<code>cssnano</code>。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/aa6507f5.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-webpack-commons-chunk" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/1092a999.html">Webpack优化系列 --- 公共模块与业务模块隔离</a>
+    </h1>
+  
+
+        
+        <a href="/post/1092a999.html" class="archive-article-date">
+  	<time datetime="2018-12-01T05:55:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在我们实际的项目中，模块大致可以分为业务相关的模块，以及公共基础模块，比如第三方的依赖模块（React， lodash， echart）等。<br>并不会常常更新，而且相对来说体积都比较大。如果和业务代码一起打包，不容易利用缓存。每次更新都引起重新打包和下载。<br>如果能够把公用模块和业务模块分开打包，那么对于性能来说，会有不小的提升。</p>
+<p>webpack的<code>CommonsChunkPlugin</code>插件帮我们完美的解决了这个问题。<br>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/1092a999.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux防火墙小计" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -563,192 +730,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/post/c3fa870e.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-React多页应用" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/ef9db4a8.html">Webpack --- React多页应用</a>
-    </h1>
-  
-
-        
-        <a href="/post/ef9db4a8.html" class="archive-article-date">
-  	<time datetime="2018-10-21T02:49:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>工作遇到这样的需求，相同的项目中，需要打包出多个单页应用，但是又希望能够在开发和维护中共享很多配置或者组件。<br>于是乎，使用 webpack 做了一些简单配置</p>
-</blockquote>
-<p>项目 tree 结构大致如下：</p>
-<img src="/post/ef9db4a8/we.png">
-<p>预期目标是， 在<code>routes</code>目录下，每有一个文件夹，就代表一个独立的单页应用，也就是一个出口文件。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/ef9db4a8.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客评论实现原理探究" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/b6db774d.html">博客评论工具Gitment实现原理探究</a>
-    </h1>
-  
-
-        
-        <a href="/post/b6db774d.html" class="archive-article-date">
-  	<time datetime="2018-02-08T07:46:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>最近对博客又折腾了一轮，换了一个简洁一些的主题，并且对博客SEO和评论系统做了一些优化。<br>  之前的使用的是<a href="https://disqus.com/" target="_blank" rel="noopener">Disqus</a>作为评论系统，但是由于大家都懂的原因,在墙内无法访问，总是造成页面的持续lodaing。<br>  在多方面的对比下，选择了<a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">Giement</a>, 同时也对这个工具的实现做了一些研究。</p>
-</blockquote>
-<p>具体的安装和使用方法，我就不在这里赘述了，请参考作者<a href="https://github.com/imsun" target="_blank" rel="noopener">Shiquan Sun</a>的<a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="noopener">说明文档</a>。<br>感谢作者的热心开发和共享，我主要从这些方面做了实现探究：</p>
-<ul>
-<li>基本原理与思想</li>
-<li>评论区域的渲染</li>
-<li>用户登陆</li>
-<li>初始化评论</li>
-<li>数据以及状态管理(Bobx)</li>
-<li>创建评论</li>
-<li>自定义主题的支持</li>
-<li>点赞/删除/预览等功能的实现</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">gitment</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">comment</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">OAuth</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/b6db774d.html">展开全文 >></a>
         </p>
       
 

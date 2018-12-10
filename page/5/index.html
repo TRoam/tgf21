@@ -171,6 +171,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ember-unit-test" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/c45a3bf6.html">Ember-Unit-Test</a>
+    </h1>
+  
+
+        
+        <a href="/post/c45a3bf6.html" class="archive-article-date">
+  	<time datetime="2016-06-27T17:28:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Testing is a core part of the Ember framework and its development cycle.</p>
+<h3 id="Test-framework"><a href="#Test-framework" class="headerlink" title="Test framework"></a>Test framework</h3><ul>
+<li><a href="https://qunitjs.com/" target="_blank" rel="noopener">QUnit</a></li>
+<li><a href="http://phantomjs.org/" target="_blank" rel="noopener">PhantomJs</a></li>
+</ul>
+<h3 id="How-to-run"><a href="#How-to-run" class="headerlink" title="How to run"></a>How to run</h3><p>Under <code>js_app/frontend/</code> folder:</p>
+<ul>
+<li><code>ember test</code>: run tests</li>
+<li><code>ember test --test-page=&#39;tests/index.html?coverage=true&#39;</code>: run tests with coverage</li>
+<li><code>rake coverage:js</code>: runt tests with coverage</li>
+<li><code>ember test -filter &#39;test des&#39;</code>: run one test what des is ‘test des’</li>
+<li><code>ember test --server</code>: run tests and e-run tests on every file-change</li>
+<li><code>ember server;  localhost:4200/test</code>: run tests on server</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Unit Test</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ember</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/c45a3bf6.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript面试题" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -705,89 +800,9 @@
 
 
   
-    <article id="post-使用Hexo和github搭建个人博客" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/fc33988f.html">使用Hexo和github搭建个人博客</a>
-    </h1>
-  
-
-        
-        <a href="/post/fc33988f.html" class="archive-article-date">
-  	<time datetime="2014-10-25T05:20:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这篇文章详细描述了，如何使用hexo搭建个人静态博客。</p>
-</blockquote>
-<img src="/post/fc33988f/1.png">
-<p><br></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><br><br>我以前的个人博客，是使用 <a href="https://jekyllrb.com/" target="_blank" rel="noopener">jekyll</a> 搭建的，jekyll 是使用ruby开发的，很多的语法和使用习惯都有深深的ruby风格，按理说，作为一个rubyer，应该会喜欢才对呀，我为何要从Jekyll转到<a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a>呢?</p>
-<blockquote>
-<p>关于如何使用 jekyll，我推荐阮老师的这篇文章-<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="noopener">使用jekyll和github page 搭建无限量博客</a></p>
-</blockquote>
-<p>我想主要是这几点吧：</p>
-<ol>
-<li>Hexo是基于nodejs实现的，就我目前而已，接触JavaScript是比较多一些，也觉得js本地开发方便一些。</li>
-<li>Hexo是本地编译和<code>render()</code>的，拥有本地的调试服务器，不用等到server端，就可以预览自己的博文，而这一点，jekyll是做不到的。</li>
-<li>Hexo对于分页和文章摘要更加友好，也更加轻量级。</li>
-<li>Hexo的生态和社区要稍微友好一些，至少漂亮主题是特别的多（纯粹个人感觉）。</li>
-<li>搭建静态博客系统，hexo非常的轻便简洁，并且拥有很多的插件和友好的文档。</li>
-<li>当然咯，很重要一点，jekyll所拥有的功能，hexo基本都拥有，包括都支持Markdown。</li>
-</ol>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/fc33988f.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -931,6 +946,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -943,11 +966,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color4">software</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -963,14 +986,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">software</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -980,6 +995,34 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">tips</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ExtractTextPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MiniCssExtractPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">deploy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">webpack-bundle-analyzer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1047,10 +1090,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">gitment</a>
               </li>
              
@@ -1064,10 +1103,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,18 +1147,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Font-Awesome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ExtractTextPlugin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MiniCssExtractPlugin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">webpack-bundle-analyzer</a>
               </li>
             
             <div class="clearfix"></div>

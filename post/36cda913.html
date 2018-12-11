@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.tgf21.com">
-  <title>Webpack-Dll(五) --- DllPlugin处理外部依赖 | 小光头禅院</title>
+  <title>Webpack优化系列(五) --- DllPlugin处理外部依赖 | 小光头禅院</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="我们可能已经遇到了这个问题，webpack已经区别出业务模块和公共模块的代码，为了利用浏览器缓存我们也添加了hash，然而又有了这些问题：    每次打包，公共组件的hash都会变化，浏览器缓存形同虚设 打包时间越来越长，特别是在多页面应用的项目中   当然劳动人民的智慧是无限的，为了优化这些问题，可以从这些方面着手   公共模块等提出来单独打包，每次只打包业务模块 将打包出来的公共模块作为外部依">
 <meta name="keywords" content="前端,webpack,优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack-Dll(五) --- DllPlugin处理外部依赖">
+<meta property="og:title" content="Webpack优化系列(五) --- DllPlugin处理外部依赖">
 <meta property="og:url" content="http://www.tgf21.com/post/36cda913.html">
 <meta property="og:site_name" content="小光头禅院">
 <meta property="og:description" content="我们可能已经遇到了这个问题，webpack已经区别出业务模块和公共模块的代码，为了利用浏览器缓存我们也添加了hash，然而又有了这些问题：    每次打包，公共组件的hash都会变化，浏览器缓存形同虚设 打包时间越来越长，特别是在多页面应用的项目中   当然劳动人民的智慧是无限的，为了优化这些问题，可以从这些方面着手   公共模块等提出来单独打包，每次只打包业务模块 将打包出来的公共模块作为外部依">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-11T12:24:20.355Z">
+<meta property="og:updated_time" content="2018-12-11T12:28:04.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack-Dll(五) --- DllPlugin处理外部依赖">
+<meta name="twitter:title" content="Webpack优化系列(五) --- DllPlugin处理外部依赖">
 <meta name="twitter:description" content="我们可能已经遇到了这个问题，webpack已经区别出业务模块和公共模块的代码，为了利用浏览器缓存我们也添加了hash，然而又有了这些问题：    每次打包，公共组件的hash都会变化，浏览器缓存形同虚设 打包时间越来越长，特别是在多页面应用的项目中   当然劳动人民的智慧是无限的，为了优化这些问题，可以从这些方面着手   公共模块等提出来单独打包，每次只打包业务模块 将打包出来的公共模块作为外部依">
   
     <link rel="alternative" href="/atom.xml" title="小光头禅院" type="application/atom+xml">
@@ -178,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Webpack-Dll(五) --- DllPlugin处理外部依赖
+      Webpack优化系列(五) --- DllPlugin处理外部依赖
     </h1>
   
 
@@ -477,19 +477,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,15 +509,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iptables</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,14 +541,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
               </li>
              
@@ -553,6 +553,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Unit Test</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Ember</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
@@ -562,14 +570,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MiniCssExtractPlugin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Unit Test</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ember</a>
               </li>
              
               <li class="article-tag-list-item">

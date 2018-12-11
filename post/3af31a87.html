@@ -17,7 +17,7 @@
 <meta property="og:description" content="Webpack将所有的静态资源都视为模块，比如JavaScript，scss，图片等，从而引入对应的loader去加载相应的资源，并且处理成相应的模块。和大多数包管理器不一样的是，Webpack的加载器之间可以进行串联，一个加载器的输出可以成为另一个加载器的输入。  如下图，Less资源首先通过less-loader模块加载器加载为css资源，然后通过css-loader模块加载器转化为css模块">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://www.tgf21.com/post/3af31a87/css-loader.png">
-<meta property="og:updated_time" content="2018-12-05T12:41:39.683Z">
+<meta property="og:updated_time" content="2018-12-11T12:23:55.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack优化系列(二) -- Js&amp;css模块分离">
 <meta name="twitter:description" content="Webpack将所有的静态资源都视为模块，比如JavaScript，scss，图片等，从而引入对应的loader去加载相应的资源，并且处理成相应的模块。和大多数包管理器不一样的是，Webpack的加载器之间可以进行串联，一个加载器的输出可以成为另一个加载器的输入。  如下图，Less资源首先通过less-loader模块加载器加载为css资源，然后通过css-loader模块加载器转化为css模块">
@@ -235,6 +235,15 @@
 <p>修改相关配置：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">var</span> extractCSS = <span class="keyword">new</span> ExtractTextPlugin(<span class="string">'css/[name].css?[contenthash]'</span>)</span><br><span class="line"><span class="keyword">var</span> cssLoader = extractCSS.extract([<span class="string">'css'</span>])</span><br><span class="line"><span class="keyword">var</span> sassLoader = extractCSS.extract([<span class="string">'css'</span>, <span class="string">'sass'</span>])</span><br><span class="line"></span><br><span class="line">plugins.push(extractCSS);</span><br><span class="line">......</span><br><span class="line"><span class="comment">//conf - module - loaders</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css/</span>,<span class="comment">// 增加对 CSS 文件的支持</span></span><br><span class="line">        <span class="comment">// 提取出 Chunk 中的 CSS 代码到单独的文件中</span></span><br><span class="line">        loader: ExtractTextPlugin.extract(&#123;</span><br><span class="line">          <span class="comment">// 通过 minimize 选项压缩 CSS 代码</span></span><br><span class="line">          use: [<span class="string">'css-loader'</span>]</span><br><span class="line">        &#125;),</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/\.scss$/</span>, <span class="attr">loader</span>: sassLoader&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"> plugins: [</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">new</span> ExtractTextPlugin(&#123;</span><br><span class="line">      filename: <span class="string">`[name]_[contenthash:8].css`</span>,<span class="comment">// 给输出的 CSS 文件名称加上 Hash 值</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">/// ...</span></span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
 <p>有写的不当之处，欢迎指正，谢谢~</p>
+<blockquote>
+<ul>
+<li><a href="/post/c3fa870e.html">Webpack优化系列(一) – 性能分析可视化</a></li>
+<li><a href="/post/3af31a87.html">Webpack优化系列(二) – Js&amp;css模块分离</a></li>
+<li><a href="/post/1092a999.html">Webpack优化系列(三) — 公共模块与业务模块隔离</a></li>
+<li><a href="/post/1092a999.html">Webpack优化系列(四) — 减肥:压缩和混淆代码</a></li>
+<li><a href="/post/36cda913.html">Webpack-Dll(五) — DllPlugin处理外部依赖</a></li>
+</ul>
+</blockquote>
 
       
 
@@ -529,14 +538,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -549,6 +550,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
               </li>
              
@@ -558,6 +567,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ExtractTextPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MiniCssExtractPlugin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,18 +599,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">tips</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ExtractTextPlugin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MiniCssExtractPlugin</a>
               </li>
              
               <li class="article-tag-list-item">
